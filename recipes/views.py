@@ -1,4 +1,6 @@
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Post
 
 
@@ -61,6 +63,8 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+
+
 class PostLike(View):
 
     def post(self, request, slug, *args, **kwargs):
